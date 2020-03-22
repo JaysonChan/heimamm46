@@ -10,6 +10,28 @@
               <span class="line"></span>
               <span class="sub-title">用户登录</span>
           </div>
+          <!-- 表单 -->
+          <el-form ref="form" :model="loginForm" label-width="43px">
+              <!-- 手机号 -->
+            <el-form-item>
+                <el-input prefix-icon="el-icon-user" placeholder="请输入手机号" v-model="loginForm.phone"></el-input>
+            </el-form-item>
+            <!-- 密码 -->
+            <el-form-item>
+                <el-input prefix-icon="el-icon-lock" placeholder="请输入密码" v-model="loginForm.password"></el-input>
+            </el-form-item>
+            <!-- 验证码 -->
+            <el-form-item>
+                <el-input prefix-icon="el-icon-key" placeholder="请输入验证码" v-model="loginForm.loginCode"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-checkbox v-model="loginForm.isChecked">是否同意用户协议</el-checkbox>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" >立即创建</el-button>
+                <el-button>取消</el-button>
+            </el-form-item>
+        </el-form>
       </div>
       <!-- 右侧的图片 -->
       <img src="../../assets/login_banner_ele.png" alt="">
@@ -19,7 +41,21 @@
 <script>
 export default {
    //组件名
-   name:'login'
+   name:'login',
+   data() {
+       return {
+           loginForm:{
+            // 手机号
+            phone:"",
+            // 密码 
+            password:"",
+            // 验证码
+            loginCode:"",
+            // 是否勾选 
+            isChecked:""
+           }
+       }
+   },
 }
 </script>
 
@@ -33,15 +69,19 @@ export default {
     align-items: center;
     /* 左右均分 */
     justify-content: space-around;
+    // 左侧盒子
     .left-box {
     width: 478px;
     background-color: #F5F5F5;
     height: 550px;
+    padding-right: 41px;
+    block-size: border-box;
     .title-box {
         align-items: center;
         display: flex;
         margin-top: 44px;
         margin-left: 48px;
+        margin-bottom: 27px;
         .logo{}
         .title{
             font-size: 24px;
