@@ -18,7 +18,15 @@
             </el-form-item>
             <!-- 密码 -->
             <el-form-item>
-                <el-input prefix-icon="el-icon-lock" placeholder="请输入密码" v-model="loginForm.password"></el-input>
+                <el-row>
+                    <el-col span="17">
+                        <el-input prefix-icon="el-icon-lock" placeholder="请输入密码" v-model="loginForm.password"></el-input>
+                    </el-col>
+                    <el-col span="7">
+                        <img class="login-code" src="../../assets/login_captcha.png" alt="">
+                    </el-col>
+                </el-row>
+                
             </el-form-item>
             <!-- 验证码 -->
             <el-form-item>
@@ -97,6 +105,10 @@ export default {
             font-size: 21px;
             margin-left: 12px;
         }
+    }
+    .login-code{
+        width: 100%;
+        height:40.8px;
     }
 }
 }
