@@ -32,8 +32,14 @@
             <el-form-item>
                 <el-input prefix-icon="el-icon-key" placeholder="请输入验证码" v-model="loginForm.loginCode"></el-input>
             </el-form-item>
+            <!-- 用户协议 -->
             <el-form-item>
-                <el-checkbox v-model="loginForm.isChecked">是否同意用户协议</el-checkbox>
+                <el-checkbox v-model="loginForm.isChecked">
+                我已阅读并同意
+                <el-link type="primary">用户协议</el-link>
+                和
+                <el-link type="primary">隐私条款</el-link>
+                </el-checkbox>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" >立即创建</el-button>
@@ -82,6 +88,7 @@ export default {
     width: 478px;
     background-color: #F5F5F5;
     height: 550px;
+     // 设置样式 把 表单间隙空出来
     padding-right: 41px;
     block-size: border-box;
     .title-box {
@@ -90,7 +97,9 @@ export default {
         margin-top: 44px;
         margin-left: 48px;
         margin-bottom: 27px;
-        .logo{}
+        .logo{
+ 
+        }
         .title{
             font-size: 24px;
             margin-left: 16px;
@@ -106,11 +115,18 @@ export default {
             margin-left: 12px;
         }
     }
+    //登录验证码
     .login-code{
         width: 100%;
         height:40.8px;
     }
-}
+ }
+ .el-checkbox {
+    display: flex;
+    .el-checkbox__label {
+        display: flex;
+        }
+    }
 }
 // .login-container 
 </style>
