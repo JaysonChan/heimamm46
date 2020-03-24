@@ -19,10 +19,10 @@
             <!-- 密码 -->
             <el-form-item>
                 <el-row>
-                    <el-col span="17">
+                    <el-col :span="17">
                         <el-input prefix-icon="el-icon-lock" placeholder="请输入密码" v-model="loginForm.password"></el-input>
                     </el-col>
-                    <el-col span="7">
+                    <el-col :span="7">
                         <img class="login-code" src="../../assets/login_captcha.png" alt="">
                     </el-col>
                 </el-row>
@@ -38,12 +38,12 @@
                 我已阅读并同意
                 <el-link type="primary">用户协议</el-link>
                 和
-                <el-link type="primary">隐私条款</el-link>
+                <el-link type="primary">登录</el-link>
                 </el-checkbox>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" >立即创建</el-button>
-                <el-button>取消</el-button>
+                <el-button class="my-btn" type="primary" >注册</el-button>
+                <el-button class="my-btn" type="primary">取消</el-button>
             </el-form-item>
         </el-form>
       </div>
@@ -98,7 +98,6 @@ export default {
         margin-left: 48px;
         margin-bottom: 27px;
         .logo{
- 
         }
         .title{
             font-size: 24px;
@@ -120,13 +119,22 @@ export default {
         width: 100%;
         height:40.8px;
     }
+     .my-btn {
+        width: 100%;
+        margin-top: 26px;
+        margin-left: 0;
+    }
  }
+ //协议区域的布局
  .el-checkbox {
     display: flex;
+    // 上下居中
+    align-items: center;
     .el-checkbox__label {
         display: flex;
         }
     }
+   
 }
 // .login-container 
 </style>
